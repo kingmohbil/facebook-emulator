@@ -1,0 +1,12 @@
+<ul class="nav-links">
+  <% locals.elements.forEach(element => { %>
+  <li class="nav-link">
+    <a
+      href="<%= element.href %>"
+      class="link <%=element.active? 'active':'' %>"
+    >
+      <%= element.text%>
+    </a>
+  </li>
+  <% }) %>
+</ul>
