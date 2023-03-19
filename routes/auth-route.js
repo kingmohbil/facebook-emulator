@@ -3,18 +3,18 @@ const passport = require('passport');
 const router = express.Router();
 
 router.get(
-  '/auth/facebook',
+  '/facebook',
   passport.authenticate('facebook', {
-    scope: ['public_profile', 'email', 'user_location', 'user_friends'],
+    scope: ['public_profile', 'user_photos'],
   })
 );
 
 router.get(
-  '/auth/facebook/redirect',
-  passport.authenticate('facebook'),
-  (req, res) => {
-    return res.send('You reached the callback URL');
-  }
+  '/facebook/redirect',
+  passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+  })
 );
 
 module.exports = router;
