@@ -1,12 +1,50 @@
+<% const elements = [{ href: '/profile', src: locals.userPicture }] %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('head', {title: 'facebook emulator'}) %>
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="icon" href="./images/facebook.png" type="image/x-icon" />
   </head>
   <body>
-    <a href="./auth/facebook">Login using facebook</a>
+    <div class="page-content">
+      <%- include('nav-images', {title: 'facebook emulator', elements}) %>
+      <section class="main-section">
+        <aside class="left-side">
+          <nav class="left-nav">
+            <div class="main-links">
+              <%- include('side-link', {element: { text:'Home', src:
+              './images/home.png', alt:'home logo', href:'/' }})%> <%-
+              include('side-link', {element: { text:'Mohammad Alwazzan', src:
+              locals.userPicture, alt:'profile picture', href: '/profile' }})%>
+            </div>
+            <hr />
+            <div class="secondry-links">
+              <%- include('side-link', {element: { text:'Friends', src:
+              './images/friends.png', alt:'Friends group logo', href:'/Friends'
+              }})%>
+            </div>
+          </nav>
+        </aside>
+        <main class="main-content"></main>
+        <aside class="right-side">
+          <nav class="right-nav">
+            <div class="main-links">
+              <%- include('side-link', {element: { text:'Home', src:
+              './images/home.png', alt:'home logo', href:'/' }})%> <%-
+              include('side-link', {element: { text:'Mohammad Alwazzan', src:
+              locals.userPicture, alt:'profile picture', href: '/profile' }})%>
+            </div>
+            <hr />
+            <div class="secondry-links">
+              <%- include('side-link', {element: { text:'Friends', src:
+              './images/friends.png', alt:'Friends group logo', href:'/Friends'
+              }})%>
+            </div>
+          </nav>
+        </aside>
+      </section>
+    </div>
   </body>
 </html>
