@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('head', {title: 'Facebook Emulator'}) %>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="icon" href="../images/facebook.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--prettier-ignore -->
+    <%- include('nav', {title: 'Login'}) %>
+    <div class="signin-container">
+      <a href="/auth/facebook" class="facebook-login">
+        <i class="devicon-facebook-plain"></i>
+        Login using facebook
+      </a>
+    </div>
+  </body>
+</html>
