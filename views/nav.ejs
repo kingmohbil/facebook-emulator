@@ -1,12 +1,17 @@
-<ul class="nav-links">
-  <% locals.elements.forEach(element => { %>
-  <li class="nav-link">
-    <a
-      href="<%= element.href %>"
-      class="link <%=element.active? 'active':'' %>"
-    >
-      <%= element.text%>
-    </a>
-  </li>
-  <% }) %>
-</ul>
+<nav class="main-nav">
+  <h1 class="nav-title"><%= locals.title %></h1>
+  <ul class="nav-links">
+    <!--prettier-ignore-->
+    <% if(locals.elements){ %> 
+    <% locals.elements.forEach(element => { %>
+    <li class="nav-link">
+      <a
+        href="<%= element.href %>"
+        class="link <%=element.active? 'active':'' %>"
+      >
+        <%= element.text%>
+      </a>
+    </li>
+    <% }) %> <% } %>
+  </ul>
+</nav>
