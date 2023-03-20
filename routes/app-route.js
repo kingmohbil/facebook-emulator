@@ -3,7 +3,10 @@ const router = express.Router();
 
 router.get('/', checkIfLoggedIn, (req, res) => {
   console.log(`The User: ${req.user}`);
-  return res.render('home', { userPicture: req.user.profile.picture });
+  return res.render('home', {
+    user: req.user,
+    userPicture: req.user.profile.picture,
+  });
 });
 
 module.exports = router;
