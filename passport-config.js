@@ -39,7 +39,7 @@ const initializePassport = (passport) => {
       const user = await users.findOne({ _id: id });
       return done(null, user);
     } catch (error) {
-      return done(err);
+      return done(error);
     }
   });
 };
