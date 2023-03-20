@@ -6,7 +6,7 @@ router.use(protect);
 router.get(
   '/facebook',
   passport.authenticate('facebook', {
-    scope: ['public_profile', 'user_photos'],
+    scope: ['public_profile', 'user_posts'],
   })
 );
 
