@@ -1,11 +1,17 @@
 body {
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 8fr;
 }
-.signin-container {
+.sign-in-card {
+  width: fit-content;
   background-color: var(--light-blue);
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+}
+.sign-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .facebook-login {
