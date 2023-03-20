@@ -5,46 +5,27 @@
     <%- include('head', {title: 'facebook emulator'}) %>
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/post.css" />
     <link rel="icon" href="./images/facebook.png" type="image/x-icon" />
   </head>
   <body>
     <div class="page-content">
-      <%- include('nav-images', {title: 'facebook emulator', elements}) %>
-      <section class="main-section">
-        <aside class="left-side">
-          <nav class="left-nav">
+      <%- include('nav-images', {title: 'facebook emulator'}) %>
+      <div class="main-page">
+        <aside class="left-nav">
+          <div class="side-links scroll">
             <div class="main-links">
-              <%- include('side-link', {element: { text:'Home', src:
-              './images/home.png', alt:'home logo', href:'/' }})%> <%-
-              include('side-link', {element: { text:'Mohammad Alwazzan', src:
-              locals.userPicture, alt:'profile picture', href: '/profile' }})%>
+              <%- include('side-link', {href:'/', src:'./images/home.png', alt:
+              'Home Logo', text: 'Home', active: true}) %> <%-
+              include('side-link', {href:'/', src:locals.userPicture, alt:
+              'Profile picture', text: locals.user.username, active: false}) %>
+              <hr />
             </div>
-            <hr />
-            <div class="secondry-links">
-              <%- include('side-link', {element: { text:'Friends', src:
-              './images/friends.png', alt:'Friends group logo', href:'/Friends'
-              }})%>
-            </div>
-          </nav>
+          </div>
         </aside>
-        <main class="main-content"></main>
-        <aside class="right-side">
-          <nav class="right-nav">
-            <div class="main-links">
-              <%- include('side-link', {element: { text:'Home', src:
-              './images/home.png', alt:'home logo', href:'/' }})%> <%-
-              include('side-link', {element: { text:'Mohammad Alwazzan', src:
-              locals.userPicture, alt:'profile picture', href: '/profile' }})%>
-            </div>
-            <hr />
-            <div class="secondry-links">
-              <%- include('side-link', {element: { text:'Friends', src:
-              './images/friends.png', alt:'Friends group logo', href:'/Friends'
-              }})%>
-            </div>
-          </nav>
-        </aside>
-      </section>
+        <main class="posts"></main>
+        <aside class="right-nav"></aside>
+      </div>
     </div>
   </body>
 </html>
