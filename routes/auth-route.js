@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
+router.use(protect);
 router.get(
   '/facebook',
   passport.authenticate('facebook', {
@@ -18,3 +19,8 @@ router.get(
 );
 
 module.exports = router;
+
+function protect(req, res, next) {
+  if (!req.user) return next();
+  return res.redirect('/');
+}
