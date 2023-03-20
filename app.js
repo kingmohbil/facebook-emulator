@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-
 const passport = require('passport');
 const authRoute = require('./routes/auth-route');
+const loginRoute = require('./routes/login-route');
+const appRoute = require('./routes/app-route');
 const initialize = require('./passport-config');
 const { connect } = require('./connect');
 
@@ -22,11 +23,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/', authRoute);
-app.get('/', (req, res) => {
-  return res.render('home');
-});
-
+app.use('/', loginRoute);
+app.use('/auth', authRoute);
+app.use('/', appRoute);
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}...`);
   connect(process.env.DB_URL);
