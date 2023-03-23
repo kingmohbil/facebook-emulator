@@ -5,6 +5,7 @@ const userSchema = new Schema({
   profile: {
     picture: String,
   },
+  posts: [],
   username: String,
   facebookId: String,
 });
