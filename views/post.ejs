@@ -1,0 +1,52 @@
+<div class="post">
+  <div class="header-container">
+    <header class="post-header">
+      <img
+        src="<%= src %>"
+        alt="creator of the post logo"
+        width="40"
+        height="40"
+      />
+      <div class="post-details">
+        <a href="" class="post-link"
+          ><h5 class="post-creator">Mohammad Alwazzan</h5></a
+        >
+        <p class="post-date">2 days</p>
+      </div>
+      <div class="post-links"></div>
+    </header>
+  </div>
+  <p class="post-description">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, quo
+    perferendis rerum doloribus, quibusdam excepturi ab, placeat rem modi
+    maiores ut quaerat ex reiciendis Lorem ipsum dolor sit, amet consectetur
+    adipisicing elit. Nesciunt earum reiciendis alias voluptatum eos omnis,
+    dolore adipisci sit. Dolore perspiciatis amet porro excepturi reprehenderit
+    assumenda neque id quae in expedita?
+  </p>
+  <% if(image != null) { %>
+  <div class="post-img">
+    <img src="<%= image %>" alt="post-img" width="500" height="500" />
+  </div>
+  <% } %>
+  <footer class="post-footer">
+    <div class="posts-counters-links">
+      <div class="likes-counter">
+        <img src="<%=likes.logo%>" alt="likes" height="30px" />
+        <p><%=likes.number%></p>
+      </div>
+      <div class="comments-shares-counter">
+        <div>
+          <p><%=likes.number%></p>
+          <img src="<%=likes.logo%>" alt="likes" height="30px" />
+        </div>
+        <div>
+          <p><%=likes.number%></p>
+          <img src="<%=likes.logo%>" alt="likes" height="30px" />
+        </div>
+      </div>
+    </div>
+    <hr class="post-hr" />
+    <div class="post-links"></div>
+  </footer>
+</div>
