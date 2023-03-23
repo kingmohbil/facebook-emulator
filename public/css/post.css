@@ -1,0 +1,57 @@
+.post {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: white;
+  border-radius: 12px;
+}
+.post-header {
+  padding: 20px 16px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  gap: 12px;
+}
+
+.post-header img {
+  border-radius: 50%;
+}
+
+.post-hr {
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  width: calc(100% - 24px);
+  border-radius: 12px;
+}
+.post-creator,
+.post-date {
+  margin: 0;
+}
+
+.post-link {
+  text-decoration: none;
+  color: black;
+}
+.post-date {
+  font-size: 14px;
+}
+
+.post-description {
+  margin: 0;
+  padding: 8px 16px 0;
+}
+
+.posts-counters-links {
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+.posts-counters-links div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comments-shares-counter div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
