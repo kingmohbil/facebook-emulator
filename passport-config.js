@@ -8,16 +8,17 @@ const initializePassport = (passport) => {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
         callbackURL: '/auth/facebook/redirect',
-        profileFields: ['displayName', 'id', 'photos', 'profileUrl'],
+        profileFields: ['displayName', 'id', 'photos', 'profileUrl', 'posts'],
       },
       async (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
+        console.log(profile._json);
         try {
           const user = await users.findOne({ facebookId: profile.id });
           if (!user) {
             const user = await users.create({
               facebookId: profile.id,
               username: profile.displayName,
+              // posts: profile.posts.data,
               profile: {
                 picture: profile._json.picture.data.url,
               },
