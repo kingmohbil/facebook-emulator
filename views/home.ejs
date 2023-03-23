@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/post.css" />
     <link rel="icon" href="./images/facebook.png" type="image/x-icon" />
+    <script src="dotdotdot.js" defer></script>
   </head>
   <body>
     <div class="page-content">
@@ -19,15 +20,26 @@
               <%- include('side-link', {href:'/', src:'./images/home.png', alt:
               'Home Logo', text: 'Home', active: true}) %> <%-
               include('side-link', {href:'/', src:locals.user.profile.picture,
-              alt: 'Profile picture', text: locals.user.username, active:
-              false}) %>
+              alt: 'Profile picture', text: locals.user.username, active: false,
+              }) %>
               <hr />
             </div>
           </div>
         </aside>
-        <main class="posts"></main>
+        <main class="posts">
+          <%- include('post', {src: locals.user.profile.picture, image: null,
+          likes: {logo: './images/heart.png', number: 10}}) %>
+        </main>
         <aside class="right-nav"></aside>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const wrapper = document.querySelector('.post-description');
+        new Dotdotdot(wrapper, {
+          height: 50,
+        });
+      });
+    </script>
   </body>
 </html>
